@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="RelacionesEntreClases">
+  <ClassDiagramComponents>
+    <Class name="Area" package="relacionesentreclases" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="sector" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="sector"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSector" returnType="String" visibility="public"/>
+        <Method name="setSector" returnType="void" visibility="public">
+          <Argument type="String" name="sector"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleados" package="relacionesentreclases" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="area" type="Area" visibility="private"/>
+        <Field name="turno" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="dni" type="int" visibility="private"/>
+        <Field name="fechaIngreso" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Area" name="area"/>
+          <Argument type="String" name="turno"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="int" name="dni"/>
+          <Argument type="LocalDate" name="fechaIngreso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getArea" returnType="Area" visibility="public"/>
+        <Method name="setArea" returnType="void" visibility="public">
+          <Argument type="Area" name="area"/>
+        </Method>
+        <Method name="getTurno" returnType="String" visibility="public"/>
+        <Method name="setTurno" returnType="void" visibility="public">
+          <Argument type="String" name="turno"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getDni" returnType="int" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="int" name="dni"/>
+        </Method>
+        <Method name="getFechaIngreso" returnType="LocalDate" visibility="public"/>
+        <Method name="setFechaIngreso" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="fechaIngreso"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="generarEmpleado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Farmaco" package="relacionesentreclases" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="agente" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="agente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAgente" returnType="String" visibility="public"/>
+        <Method name="setAgente" returnType="void" visibility="public">
+          <Argument type="String" name="agente"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RelacionesEntreClases" package="relacionesentreclases" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Umbrella" package="relacionesentreclases" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="listaEMP" type="HashMap&lt;Integer, Empleados&gt;" visibility="private"/>
+        <Field name="areas" type="Area" visibility="private"/>
+        <Field name="farmacos" type="Farmaco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Area" name="areas"/>
+          <Argument type="Farmaco" name="farmacos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getListaEMP" returnType="HashMap&lt;Integer, Empleados&gt;" visibility="public"/>
+        <Method name="setListaEMP" returnType="void" visibility="public">
+          <Argument type="HashMap&lt;Integer, Empleados&gt;" name="listaEMP"/>
+        </Method>
+        <Method name="getAreas" returnType="Area" visibility="public"/>
+        <Method name="setAreas" returnType="void" visibility="public">
+          <Argument type="Area" name="areas"/>
+        </Method>
+        <Method name="getFarmacos" returnType="Farmaco" visibility="public"/>
+        <Method name="setFarmacos" returnType="void" visibility="public">
+          <Argument type="Farmaco" name="farmacos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="area" source="relacionesentreclases.Empleados" target="relacionesentreclases.Area" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relacionesentreclases.Umbrella" target="relacionesentreclases.Empleados" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaEMP" source="relacionesentreclases.Umbrella" target="relacionesentreclases.Empleados" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;Integer, Empleados&gt;"/>
+    <HasRelation name="areas" source="relacionesentreclases.Umbrella" target="relacionesentreclases.Area" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relacionesentreclases.Umbrella" target="relacionesentreclases.Farmaco" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="farmacos" source="relacionesentreclases.Umbrella" target="relacionesentreclases.Farmaco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relacionesentreclases.Empleados" target="relacionesentreclases.Area" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relacionesentreclases.Umbrella" target="relacionesentreclases.Area" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
